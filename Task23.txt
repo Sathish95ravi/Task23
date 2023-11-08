@@ -1,0 +1,49 @@
+1.
+
+  A.SELECT ename,sal FROM Empl WHERE sal>=2200;
+  B.SELECT*FROM Empl WHERE comm IS NULL;
+  C.SELECT ename, sal FROM empl WHERE sal <2500 OR sal >4000;
+  D.SELECT ename,job,sal FROM Empl WHERE mgr IS NULL;
+  E.SELECT ename FROM Empl WHERE ename like _ _A%;
+  F.SELECT ename FROM Empl WHERE ename LIKE "%T';
+
+
+
+2.package letcodeSathish;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class DBdemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+  String db_url="jdbc:mysql://localhost:3306/emp";
+  String user="root";
+  String password="root";
+  
+  try {
+	  
+	  Connection connection=DriverManager.getConnection(db_url,password,user);
+	  Statement stmt=connection.createStatement();
+	  String insert="insert into emptable(empcode,empname,emppage,esalary)values(101,Jenny,25,1000)";
+	  stmt.executeUpdate(insert);
+	  insert="insert into emptable values(102,Jacky,30,20000)";)
+	  
+          stmt.executeUpdate(insert);
+	  insert="insert into emptable values(103,Joe,20,40000)";
+	  stmt.executeUpdate(insert);
+	  insert="insert into emptable values(104,John,40,80000)";
+	  stmt.executeUpdate(insert);
+	  insert="insert into emptable values(105,Shameer,25,90000)";
+	  stmt.executeUpdate(insert);
+	  
+	  
+  }catch(Exception e) {
+	  e.printStackTrace();
+  }
+  
+	}
+
+}
